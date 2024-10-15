@@ -167,10 +167,39 @@
             videoIndex = index;
             var videoUrl = '';
 
-            if (index === 1) {
-                videoUrl = 'https://www.youtube.com/embed/pH3wBMEhvqI?si=T6Q9l4ckAozhyzW9';
-            } else {
-                videoUrl = 'videos/video' + index + '.mp4'; // استبدل هذا بنظام الفيديو الخاص بك
+            switch(index) {
+                case 1:
+                    videoUrl = 'https://www.youtube.com/embed/9-TkyEI4pOw?si=JoX-KD1pncfMpYb0';
+                    break;
+                case 2:
+                    videoUrl = 'https://www.youtube.com/embed/QIw3wUSAhDU?si=IMRmK7v5wE0IvLOv'; // رابط الفيديو الثاني
+                    break;
+                case 3:
+                    videoUrl = 'https://www.youtube.com/embed/mMXWX7BDTg4?si=3fLSosDbQNoXozN7'; // رابط الفيديو الثالث
+                    break;
+                case 4:
+                    videoUrl = 'https://www.youtube.com/embed/h_axwy2GH8I?si=_tNYXQYFaJwUYKTc'; // رابط الفيديو الرابع
+                    break;
+                case 5:
+                    videoUrl = 'https://www.youtube.com/embed/vTkMUN5efpw?si=OwV7BET2lnLtBwBm'; // رابط الفيديو الخامس
+                    break;
+                case 6:
+                    videoUrl = 'https://www.youtube.com/embed/lJzDpaXG4jA?si=TehRa6UMOmtK-wa8'; // رابط الفيديو السادس
+                    break;
+                case 7:
+                    videoUrl = 'https://www.youtube.com/embed/wtzvtpYVcQ0?si=gA3j31XvXJFwmJl5'; // رابط الفيديو السابع
+                    break;
+                case 8:
+                    videoUrl = 'https://www.youtube.com/embed/R1hFeycnvmo?si=yZFyrcC-6z40uV6O'; // رابط الفيديو الثامن
+                    break;
+                case 9:
+                    videoUrl = 'https://www.youtube.com/embed/ipX6CY5LgNo?si=GVcnaaDROAlmVdWv'; // رابط الفيديو التاسع
+                    break;
+                case 10:
+                    videoUrl = 'https://www.youtube.com/embed/xFjIE0jVu70?si=_CFNc0dZDBMQF2E7'; // رابط الفيديو العاشر
+                    break;
+                default:
+                    videoUrl = '';
             }
 
             document.getElementById('videoPlayer').src = videoUrl;
