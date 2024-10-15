@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإنجليزي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات عامة */
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1e3a5f, #000000); /* خلفية متدرجة */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #1e3a5f; /* لون الرأس */
+            color: white;
+            padding: 20px;
+            text-align: right;
+            font-size: 2rem; /* حجم الخط أكبر */
+            font-weight: bold;
+        }
+
+        /* قسم الكتب */
+        .books-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem; /* حجم العنوان */
+            margin-bottom: 30px;
+        }
+
+        /* الأزرار مرتبة على صفين */
+        .btn-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* صفين */
+            gap: 20px;
+            justify-content: center;
+            width: 80%;
+        }
+
+        .cta-btn {
+            background-color: #3a3a3a; /* لون الأزرار */
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px; /* حواف ناعمة */
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05); /* تكبير الزر قليلاً */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* ظل خلف الزر */
+        }
+
+        /* ذيل الصفحة */
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        المحتوى الإنجليزي
+    </header>
+
+    <!-- قسم الكتب -->
+    <section class="books-section">
+        <h1>يرجى إختيار المحتوى الذي تريده</h1>
+        <div class="btn-group">
+            <button class="cta-btn" onclick="window.location.href='#';">كتاب الليسنق</button>
+            <button class="cta-btn" onclick="window.location.href='#';">كتاب الريدنق</button>
+            <button class="cta-btn" onclick="window.location.href='videos.html';">الشروحات</button>
+            <button class="cta-btn" onclick="window.location.href='#';">الملخصات</button>
+        </div>
+    </section>
+
+    <!-- ذيل الصفحة -->
+    <footer>
+        <p>© 2024 جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

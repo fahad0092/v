@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروحات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات عامة */
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1e3a5f, #000000); /* خلفية متدرجة */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 20px;
+            text-align: right;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* قسم الفيديوهات */
+        .video-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        /* أزرار الفيديو */
+        .btn-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* صفين */
+            gap: 20px;
+            justify-content: center;
+            width: 80%;
+        }
+
+        .cta-btn {
+            background-color: #3a3a3a;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* تنسيق مشغل الفيديو */
+        .video-container {
+            margin-top: 20px;
+            display: none; /* إخفاء المشغل في البداية */
+        }
+
+        iframe {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        /* أزرار التنقل بين الفيديوهات */
+        .nav-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            display: none; /* إخفاء الأزرار في البداية */
+        }
+
+        .nav-btn {
+            background-color: #3a3a3a;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #555555;
+        }
+
+        /* ذيل الصفحة */
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        الشروحات
+    </header>
+
+    <!-- قسم الفيديوهات -->
+    <section class="video-section">
+        <h1>استعراض الشروحات</h1>
+        <div class="btn-group">
+            <!-- أزرار الفيديوهات -->
+            <button class="cta-btn" onclick="playVideo(1);">الشرح 1</button>
+            <button class="cta-btn" onclick="playVideo(2);">الشرح 2</button>
+            <button class="cta-btn" onclick="playVideo(3);">الشرح 3</button>
+            <button class="cta-btn" onclick="playVideo(4);">الشرح 4</button>
+            <button class="cta-btn" onclick="playVideo(5);">الشرح 5</button>
+            <button class="cta-btn" onclick="playVideo(6);">الشرح 6</button>
+            <button class="cta-btn" onclick="playVideo(7);">الشرح 7</button>
+            <button class="cta-btn" onclick="playVideo(8);">الشرح 8</button>
+            <button class="cta-btn" onclick="playVideo(9);">الشرح 9</button>
+            <button class="cta-btn" onclick="playVideo(10);">الشرح 10</button>
+        </div>
+
+        <!-- مشغل الفيديو -->
+        <div class="video-container" id="videoContainer">
+            <iframe id="videoPlayer" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <!-- أزرار التنقل بين الفيديوهات -->
+        <div class="nav-buttons" id="navButtons">
+            <button class="nav-btn" onclick="prevVideo();">السابق</button>
+            <button class="nav-btn" onclick="nextVideo();">التالي</button>
+        </div>
+    </section>
+
+    <!-- ذيل الصفحة -->
+    <footer>
+        <p>© 2024 جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        var videoIndex = 1;
+
+        // دالة لتشغيل الفيديو حسب الرقم
+        function playVideo(index) {
+            videoIndex = index;
+            var videoUrl = '';
+
+            if (index === 1) {
+                videoUrl = 'https://www.youtube.com/embed/pH3wBMEhvqI?si=T6Q9l4ckAozhyzW9';
+            } else {
+                videoUrl = 'videos/video' + index + '.mp4'; // استبدل هذا بنظام الفيديو الخاص بك
+            }
+
+            document.getElementById('videoPlayer').src = videoUrl;
+            document.getElementById('videoContainer').style.display = 'block'; // إظهار مشغل الفيديو
+            document.getElementById('navButtons').style.display = 'flex'; // إظهار أزرار التنقل
+        }
+
+        // دالة للفيديو التالي
+        function nextVideo() {
+            if (videoIndex < 10) {
+                videoIndex++;
+                playVideo(videoIndex);
+            }
+        }
+
+        // دالة للفيديو السابق
+        function prevVideo() {
+            if (videoIndex > 1) {
+                videoIndex--;
+                playVideo(videoIndex);
+            }
+        }
+    </script>
+
+</body>
+</html>

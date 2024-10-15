@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #1e3a5f;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #3a3a3a;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555555;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>مرحبا بك في منصة صبيان شقراء التعليمي👋🏻</h1>
+    <button class="btn" onclick="window.location.href='http://localhost:63342/pythonProject/html/login.html?_ijt=qdc9qu2n83phmk3u16p1joa1rp&_ij_reload=RELOAD_ON_SAVE';">تسجيل الدخول</button>
+    <button class="btn" onclick="createAccount();">إنشاء حساب</button>
+
+    <script>
+        function createAccount() {
+            // إظهار رسالة التحويل
+            alert('سيتم تحويلك في غضون ١٠ ثواني إلى صاحب الموقع لإنشاء حساب.');
+            setTimeout(function() {
+                window.location.href = 'https://wa.me/qr/JHJK5NCFNT25H1';
+            }, 10000); // تحويل بعد 10 ثواني
+        }
+    </script>
+
+</body>
+</html>

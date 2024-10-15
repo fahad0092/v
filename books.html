@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكتب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات عامة */
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1e3a5f, #000000); /* خلفية متدرجة */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #1e3a5f; /* لون الرأس */
+            color: white;
+            padding: 20px;
+            text-align: right;
+            font-size: 2rem; /* حجم الخط أكبر */
+            font-weight: bold;
+        }
+
+        /* قسم الكتب */
+        .books-section {
+            flex: 1; /* لتمديد الصفحة حتى يغطي المحتوى المساحة المتاحة */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem; /* حجم العنوان */
+            margin-bottom: 30px;
+        }
+
+        /* الأزرار */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-btn {
+            background-color: #3a3a3a; /* لون الأزرار */
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px; /* حواف ناعمة */
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05); /* تكبير الزر قليلاً */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* ظل خلف الزر */
+        }
+
+        /* ذيل الصفحة */
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        صبيان شقراء
+    </header>
+
+    <!-- قسم الكتب -->
+    <section class="books-section">
+        <h1>يرجى إختيار المحتوى الذي تريده</h1>
+        <div class="btn-group">
+            <button class="cta-btn" onclick="window.location.href='#';">مهارات جامعية</button>
+            <button class="cta-btn" onclick="window.location.href='#';">مهارات حاسب</button>
+            <button class="cta-btn" onclick="window.location.href='#';">احصاء</button>
+            <button class="cta-btn" onclick="window.location.href='en.html';">انجليزي</button>
+            <button class="cta-btn" onclick="window.location.href='#';">تفاضل وتكامل</button>
+        </div>
+    </section>
+
+    <!-- ذيل الصفحة -->
+    <footer>
+        <p>© 2024 جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

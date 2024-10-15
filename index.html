@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبو يوسف - الواجهة الرئيسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* إعدادات عامة */
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* لون خلفية فاتح */
+        }
+
+        /* رأس الصفحة */
+        header {
+            background-color: #1e3a5f; /* لون الرأس */
+            color: white;
+            padding: 20px;
+            text-align: right;
+            font-size: 2rem; /* حجم الخط أكبر */
+            font-weight: bold;
+        }
+
+        /* قسم الترحيب */
+        .hero-section {
+            background: linear-gradient(to bottom, #1e3a5f, #000000); /* أزرق غامق متدرج إلى الأسود */
+            height: 100vh; /* ارتفاع الصفحة */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem; /* حجم عنوان الترحيب */
+            margin-bottom: 40px;
+        }
+
+        /* أسلوب الأزرار */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            background-color: #3a3a3a; /* لون الأزرار */
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px; /* حواف ناعمة */
+            width: 200px; /* عرض موحد للأزرار */
+            text-align: center;
+        }
+
+        .button:hover {
+            transform: scale(1.05); /* تكبير الزر قليلاً */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* ظل خلف الزر */
+        }
+
+        /* ذيل الصفحة */
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        صبيان شقراء
+    </header>
+
+    <!-- قسم الترحيب -->
+    <section class="hero-section">
+        <h1 id="welcomeMessage">مرحبًا بك في الموقع التعليمي</h1>
+        <div class="buttons-container">
+            <button class="button" onclick="location.href='books.html'">الكتب</button>
+            <button class="button" onclick="location.href='tutorials.html'">شروحات</button>
+            <button class="button" onclick="location.href='agreements.html'">اتفاقيات</button>
+        </div>
+    </section>
+
+    <!-- ذيل الصفحة -->
+    <footer>
+        <p>© 2024 جميع الحقوق محفوظة لفهد تاج راسك يا نعلة.</p>
+    </footer>
+
+    <script>
+        // استرجاع اسم الطالب من localStorage
+        const studentName = localStorage.getItem('studentName');
+
+        // إذا كان اسم الطالب موجودًا، يتم تحديث الرسالة الترحيبية
+        if (studentName) {
+            document.getElementById('welcomeMessage').innerText = `مرحبًا ${studentName}👋🏻،
+            اختر المحتوى الذي تريد`; // تحديث الرسالة الترحيبية
+        } else {
+            document.getElementById('welcomeMessage').innerText = 'مرحبًا بك في الموقع التعليمي'; // الرسالة الافتراضية
+        }
+    </script>
+
+</body>
+</html>
+<div class="btn-group">
+    <button class="cta-btn" onclick="window.location.href='english.html';">مادة الإنجليزي</button>
+    <!-- الأزرار الأخرى هنا -->
+</div>
+<div class="btn-group">
+    <button class="cta-btn" onclick="window.location.href='books.html';">الكتب</button>
+    <!-- باقي الأزرار -->
+</div>
+
